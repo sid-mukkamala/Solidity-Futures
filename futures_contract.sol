@@ -21,9 +21,7 @@ contract Futures {
     
     // Derivative related variables
     uint public maturity;
-    
-    // TODO : Change to simple margin
-    // TODO: Make margin variables public 
+
     // hard-code the collateral value that must be held by each party (a number between 0 to 100 to represent % is ideal, for now it is a hard coded literal collateral value required)
     uint public buyer_collateral = 40;
     uint public seller_collateral = 40;
@@ -162,6 +160,7 @@ contract Futures {
             
             // In the case price doesnt change, no transfer of collateral occurs
             // Potentially, carry any calculations?
+            // Upon Advice, left as is 
             
         }
         
@@ -330,6 +329,8 @@ contract ERC20 {
         return true;
     }
 }
+
+// SafeMath library provided by OpenZeppelin
 
 library SafeMath { 
     function sub(uint256 a, uint256 b) internal pure returns (uint256) {
